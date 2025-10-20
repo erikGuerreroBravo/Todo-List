@@ -32,7 +32,10 @@ const addTodo = ( description ) =>{
 const loadStorage = ( ) =>{
     throw new Error('Function not implemented.');
 }
-
+/**
+ * 
+ * @param {*String} todoId  el identificador del todo que se va a eliminar
+ */
 const deleteTodo = ( todoId ) =>{
     throw new Error('Function not implemented.');
 }
@@ -48,11 +51,24 @@ const deleteCompleted = ( ) =>{
     throw new Error('Function not implemented.');
 }
 
-
+/**
+ * 
+ * @param {String } newFilter  el nuevo filtro que se va a aplicar
+ */
 const setFilter = (newFilter = Filters.All) =>{
+    throw new Error('Function not implemented.');
+}
+
+const getCurrentFilter = () =>{
     throw new Error('Function not implemented.');
 }
 
 export default{
    initStore,
+   deleteTodo,
+   getCurrentFilter,
+   deleteCompleted,
+   loadStorage,
+   setFilter,
+   toggleTodo
 }
