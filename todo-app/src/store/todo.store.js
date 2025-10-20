@@ -21,6 +21,26 @@ const initStore = () =>{
     console.log('Init Store ');
 }
 
+/**
+ * 
+ * @param {String} description  de lo que se va a crear el todo
+ */
+const addTodo = ( description ) =>{
+    throw new Error('Function not implemented.');
+}
+
+const loadStorage = ( ) =>{
+    throw new Error('Function not implemented.');
+}
+
+const deleteTodo = ( todoId ) =>{
+    throw new Error('Function not implemented.');
+}
+
+const toggleTodo = ( todoId ) =>{
+    throw new Error('Function not implemented.');
+}
+
 export default{
    initStore,
 }
