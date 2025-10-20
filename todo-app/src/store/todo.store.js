@@ -36,8 +36,20 @@ const loadStorage = ( ) =>{
 const deleteTodo = ( todoId ) =>{
     throw new Error('Function not implemented.');
 }
-
+/**
+ * 
+ * @param {String} todoId : es el identificador que se recibe para cambiar el estado 
+ */
 const toggleTodo = ( todoId ) =>{
+    throw new Error('Function not implemented.');
+}
+
+const deleteCompleted = ( ) =>{
+    throw new Error('Function not implemented.');
+}
+
+
+const setFilter = (newFilter = Filters.All) =>{
     throw new Error('Function not implemented.');
 }
 
