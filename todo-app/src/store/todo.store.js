@@ -11,6 +11,9 @@ const state ={
         new Todo('Aprender JavaScript'),
         new Todo('Aprender Vue.js'),
         new Todo('Aprender Vite'),
+        new Todo('Aprender Angular'),
+        new Todo('Aprender React'),
+        new Todo('Aprender Svelte'),
     ],
     filter: Filters.All,
    
