@@ -63,6 +63,15 @@ const getCurrentFilter = () =>{
     throw new Error('Function not implemented.');
 }
 
+/**
+ * 
+ * @param {String} filter el filtro que se va a aplicar, puede ser: all, completed, pending 
+ */
+const getTodos = (filter) =>{
+    throw new Error('Function not implemented.');
+}
+
+
 export default{
    initStore,
    deleteTodo,
