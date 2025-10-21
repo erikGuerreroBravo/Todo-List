@@ -67,8 +67,17 @@ const getCurrentFilter = () =>{
  * 
  * @param {String} filter el filtro que se va a aplicar, puede ser: all, completed, pending 
  */
-const getTodos = (filter) =>{
-    throw new Error('Function not implemented.');
+const getTodos = (filter = Filters.All) =>{
+    switch(filter){
+        case Filters.All:
+            return [...state.todos];
+        case Filters.Completed:
+            return state.todos.filter(todo => todo.done );
+        case Filters.Pending:
+            return state.todos.filter(todo => !todo.done);
+        default:
+            throw new Error(`Option ${ filter } is not valid`);
+    }
 }
 
 
