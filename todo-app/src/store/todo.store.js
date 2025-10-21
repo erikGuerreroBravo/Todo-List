@@ -26,7 +26,8 @@ const initStore = () =>{
  * @param {String} description  de lo que se va a crear el todo
  */
 const addTodo = ( description ) =>{
-    throw new Error('Function not implemented.');
+    if(!description)throw new Error('Description Required.');
+    state.todos.push( new Todo(description) );
 }
 
 const loadStorage = ( ) =>{
@@ -82,11 +83,13 @@ const getTodos = (filter = Filters.All) =>{
 
 
 export default{
+   addTodo,
    initStore,
    deleteTodo,
    getCurrentFilter,
    deleteCompleted,
    loadStorage,
    setFilter,
-   toggleTodo
+   toggleTodo,
+   getTodos,
 }
