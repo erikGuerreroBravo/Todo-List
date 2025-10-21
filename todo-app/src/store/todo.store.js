@@ -61,7 +61,7 @@ const setFilter = (newFilter = Filters.All) =>{
 }
 
 const getCurrentFilter = () =>{
-    throw new Error('Function not implemented.');
+    return state.filter;
 }
 
 /**
