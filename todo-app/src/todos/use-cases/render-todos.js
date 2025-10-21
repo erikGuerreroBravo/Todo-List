@@ -1,8 +1,6 @@
 import {Todo} from '../../models/todo.model.js';
 
 
-
-
 /**
  * 
  * @param {String} elementoId del componete donde se van a renderizar los todos html 
@@ -10,4 +8,5 @@ import {Todo} from '../../models/todo.model.js';
  */
 export const renderTodos = (elementoId, todos =[]) =>{
 
+    console.log(" Test de Renderizado"+ elementoId,todos);
 }

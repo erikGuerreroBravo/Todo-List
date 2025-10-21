@@ -15,7 +15,7 @@ export const App =( elementId ) => {
 
 const displayTodos = ()=>{
     const todos = todoStore.getTodos( todoStore.getCurrentFilter());
-    renderTodos(ElementIDs.TodoList,todos);
+    renderTodos(ElementIDs.TodoList, todos);
 }
 
 //cuando se llame la funcion app( ) se llama esta funcion anonima autoejecutable
@@ -23,7 +23,7 @@ const displayTodos = ()=>{
     const app = document.createElement('div');
     app.innerHTML= html;
     document.querySelector(elementId).append(app);
-
+    displayTodos();
 })();
 
 }
