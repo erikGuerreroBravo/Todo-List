@@ -45,7 +45,13 @@ const deleteTodo = ( todoId ) =>{
  * @param {String} todoId : es el identificador que se recibe para cambiar el estado 
  */
 const toggleTodo = ( todoId ) =>{
-    throw new Error('Function not implemented.');
+    state.todos= state.todos.map(todo => {
+       if(todo.id === todoId){
+            todo.done = !todo.done;
+       
+        }
+        return todo;
+    });
 }
 
 const deleteCompleted = ( ) =>{
