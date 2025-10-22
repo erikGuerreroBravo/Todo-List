@@ -1,5 +1,5 @@
 import {Todo} from '../../models/todo.model.js';
-
+import { createHtml } from './create-todo-html.js';
 
 /**
  * 
@@ -7,6 +7,14 @@ import {Todo} from '../../models/todo.model.js';
  * @param {Todo} todos arreglo de todos a renderizar 
  */
 export const renderTodos = (elementoId, todos =[]) =>{
+
+
+    const element = document.querySelector(elementoId);
+    todos.forEach( todo => {
+       element.append( createHtml( todo ));
+
+    });
+
 
     console.log(" Test de Renderizado"+ elementoId,todos);
 }
