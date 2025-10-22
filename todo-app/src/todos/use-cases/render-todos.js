@@ -14,7 +14,5 @@ export const renderTodos = (elementoId, todos =[]) =>{
        element.append( createHtml( todo ));
 
     });
-
-
-    console.log(" Test de Renderizado"+ elementoId,todos);
+   
 }
