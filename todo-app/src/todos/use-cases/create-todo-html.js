@@ -7,7 +7,8 @@ import { Todo } from '../../models/todo.model.js';
 export const createHtml = (todo) => {
 
     if(!todo) throw new Error('Todo is required');
-
+    // desestructuramos el objeto todo
+    const { done,description,id} = todo;
     const html= `
                 <div class="view">
                     <input class="toggle" type="checkbox" checked ${todo.done ? 'checked' : ' ' }> 
