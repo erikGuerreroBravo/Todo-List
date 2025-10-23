@@ -12,6 +12,8 @@ export const renderTodos = (elementoId, todos =[]) =>{
         element = document.querySelector(elementoId);
     if(!elementoId) throw new Error(`Elemento ${ elementoId} No se encontro`);
 
+    element.innerHTML = '';// limpiamos el html antes de renderizar
+    
     const element = document.querySelector(elementoId);
     todos.forEach( todo => {
        element.append( createHtml( todo ));
