@@ -7,13 +7,14 @@ import { Todo } from '../../models/todo.model.js';
 export const createHtml = (todo) => {
 
     if(!todo) throw new Error('Todo is required');
-    // desestructuramos el objeto todo
-    //const { done,description,id} = todo;
     
+    // desestructuramos el objeto todo
+    const { done,description,id} = todo;
+
     const html= `
                 <div class="view">
-                    <input class="toggle" type="checkbox" checked ${todo.done ? 'checked' : ' ' }> 
-                    <label>Probar JavaScript</label>
+                    <input class="toggle" type="checkbox" checked ${done ? 'checked' : ' ' }> 
+                    <label>${description}</label>
                     <button class="destroy"></button>
                 </div>
                 <input class="edit" value="Crear Elemento">
@@ -22,7 +23,7 @@ export const createHtml = (todo) => {
     
     const liElement = document.createElement('li');
     liElement.innerHTML = html;
-    liElement.setAttribute('data-id', todo.id);
+    liElement.setAttribute('data-id', id);
 
     if( todo.done ) {
         liElement.classList.add('completed');
