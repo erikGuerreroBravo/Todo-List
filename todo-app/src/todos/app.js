@@ -28,6 +28,7 @@ const displayTodos = ()=>{
 
 //cargamos funcion de input
 const newDescriptionInput = document.querySelector(ElementIDs.NewTodoInput);
+const todoList = document.querySelector(ElementIDs.TodoList);
 
 newDescriptionInput.addEventListener('keyup', ( event )=>{
     if(event.keyCode !== 13) return;
