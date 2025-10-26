@@ -40,8 +40,8 @@ newDescriptionInput.addEventListener('keyup', ( event )=>{
 });
 
 todoList.addEventListener('click', ( event )=>{
-
-    console.log(event.target);
+    const element = event.target.closest('[ data-id]');
+    console.log(element.getAttribute('data-id'));
 });
 
 
