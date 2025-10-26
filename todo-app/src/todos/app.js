@@ -41,7 +41,9 @@ newDescriptionInput.addEventListener('keyup', ( event )=>{
 
 todoList.addEventListener('click', ( event )=>{
     const element = event.target.closest('[ data-id]');
-    console.log(element.getAttribute('data-id'));
+    //console.log(element.getAttribute('data-id'));
+    todoStore.toggleTodo( element.getAttribute('data-id') );
+    displayTodos();
 });
 
 
