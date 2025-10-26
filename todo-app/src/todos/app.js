@@ -39,4 +39,10 @@ newDescriptionInput.addEventListener('keyup', ( event )=>{
    
 });
 
+todoList.addEventListener('click', ( event )=>{
+
+    console.log(event.target);
+});
+
+
 }
