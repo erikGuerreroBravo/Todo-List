@@ -39,6 +39,7 @@ newDescriptionInput.addEventListener('keyup', ( event )=>{
    
 });
 
+/** se agrega el evento al componente todoList */
 todoList.addEventListener('click', ( event )=>{
     const element = event.target.closest('[ data-id]');
     //console.log(element.getAttribute('data-id'));
