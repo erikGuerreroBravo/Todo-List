@@ -31,11 +31,17 @@ const initStore = () =>{
 const addTodo = ( description ) =>{
     if(!description)throw new Error('Description Required.');
     state.todos.push( new Todo(description) );
+    savestorageToLocalStorage();
 }
 
 const loadStorage = ( ) =>{
     throw new Error('Function not implemented.');
 }
+
+const savestorageToLocalStorage = () =>{
+    localStorage.setItem('storage','Hola, estoy utilziando localStorage' );
+    console.log(localStorage.getItem('storage' ) );
+};
 /**
  * 
  * @param {*String} todoId  el identificador del todo que se va a eliminar
@@ -67,10 +73,12 @@ const deleteCompleted = ( ) =>{
  */
 const setFilter = (newFilter = Filters.All) =>{
     state.todos = newFilter;
+    savestorageToLocalStorage();
 }
 
 const getCurrentFilter = () =>{
     return state.filter;
+    savestorageToLocalStorage();
 }
 
 /**
@@ -88,6 +96,7 @@ const getTodos = (filter = Filters.All) =>{
         default:
             throw new Error(`Option ${ filter } is not valid`);
     }
+    savestorageToLocalStorage();
 }
 
 
