@@ -34,13 +34,24 @@ const addTodo = ( description ) =>{
     savestorageToLocalStorage();
 }
 
+/**
+ * 
+ * @returns regresa un objeto state con todos sus elementos tanto todos, como filter
+ */
 const loadStorage = ( ) =>{
-    throw new Error('Function not implemented.');
+    if(  !localStorage.getItem('state') )
+        return;
+    const { todos = [], filter = Filters.All} = JSON.parse( localStorage.getItem('state') );
+    state.todos = todos;
+    state.filter = filter;
+
+    //state = localStorage.getItem('state');
 }
 
 const savestorageToLocalStorage = () =>{
-    localStorage.setItem('storage','Hola, estoy utilziando localStorage' );
-    console.log(localStorage.getItem('storage' ) );
+    
+    localStorage.setItem('state', JSON.Stringify( state ) );
+    console.log(localStorage.getItem('state' ) );
 };
 /**
  * 
