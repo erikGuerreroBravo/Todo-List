@@ -50,8 +50,8 @@ const loadStorage = ( ) =>{
 
 const savestorageToLocalStorage = () =>{
     
-    localStorage.setItem('state', JSON.Stringify( state ) );
-    
+    localStorage.setItem('state', JSON.stringify( state ) );
+    console.log(localStorage.getItem('state') );  
 };
 /**
  * 
@@ -109,7 +109,7 @@ const getTodos = (filter = Filters.All) =>{
         default:
             throw new Error(`Option ${ filter } is not valid`);
     }
-    savestorageToLocalStorage();
+
 }
 
 
