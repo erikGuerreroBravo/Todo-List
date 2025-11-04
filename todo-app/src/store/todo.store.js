@@ -51,14 +51,15 @@ const loadStorage = ( ) =>{
 const savestorageToLocalStorage = () =>{
     
     localStorage.setItem('state', JSON.Stringify( state ) );
-    console.log(localStorage.getItem('state' ) );
+    
 };
 /**
  * 
  * @param {*String} todoId  el identificador del todo que se va a eliminar
  */
 const deleteTodo = ( todoId ) =>{
-    state.todos = state.todos.filter( todo =>todo.id !== todoId ); 
+    state.todos = state.todos.filter( todo =>todo.id !== todoId );
+    savestorageToLocalStorage();
 }
 /**
  * 
@@ -72,10 +73,12 @@ const toggleTodo = ( todoId ) =>{
         }
         return todo;
     });
+    savestorageToLocalStorage();
 }
 
 const deleteCompleted = ( ) =>{
     state.todos= state.todos.filter( todo => todo.done );
+    savestorageToLocalStorage();
 }
 
 /**
