@@ -92,7 +92,6 @@ const setFilter = (newFilter = Filters.All) =>{
 
 const getCurrentFilter = () =>{
     return state.filter;
-    savestorageToLocalStorage();
 }
 
 /**
