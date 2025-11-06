@@ -7,7 +7,7 @@ const ElementIDs= {
     ClearCompleted:'.clear-completed',
     TodoList: '.todo-list',
     NewTodoInput: '#new-todo-input',
-    TodoFilters: 'filtro',
+    TodoFilters: '.filtro',
 }
 /**
  * 
@@ -33,8 +33,16 @@ const newDescriptionInput = document.querySelector(ElementIDs.NewTodoInput);
 const todoList = document.querySelector(ElementIDs.TodoList);
 ///cargamos la referencia del boton eliminar completados
 const clearCompletedButton = document.querySelector(ElementIDs.ClearCompleted);
+const filtersUL = document.querySelectorAll(ElementIDs.TodoFilters);
 
 
+filtersUL.forEach( element => {
+    element.addEventListener('click', ( event )=>{
+        event.target.classList.add('selected');
+        console.log(event.target.text);
+    });
+
+});
 
 clearCompletedButton.addEventListener('click', ()=>{
     todoStore.deleteCompleted();
