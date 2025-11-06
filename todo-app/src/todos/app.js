@@ -30,6 +30,16 @@ const displayTodos = ()=>{
 //cargamos funcion de input
 const newDescriptionInput = document.querySelector(ElementIDs.NewTodoInput);
 const todoList = document.querySelector(ElementIDs.TodoList);
+///cargamos la referencia del boton eliminar completados
+const clearCompletedButton = document.querySelector(ElementIDs.ClearCompleted);
+
+
+clearCompletedButton.addEventListener('click', ()=>{
+    todoStore.deleteCompleted();
+    displayTodos();
+});
+
+
 
 newDescriptionInput.addEventListener('keyup', ( event )=>{
     if(event.keyCode !== 13) return;
