@@ -7,6 +7,7 @@ const ElementIDs= {
     ClearCompleted:'.clear-completed',
     TodoList: '.todo-list',
     NewTodoInput: '#new-todo-input',
+    TodoFilters: 'filtro',
 }
 /**
  * 
@@ -34,12 +35,11 @@ const todoList = document.querySelector(ElementIDs.TodoList);
 const clearCompletedButton = document.querySelector(ElementIDs.ClearCompleted);
 
 
+
 clearCompletedButton.addEventListener('click', ()=>{
     todoStore.deleteCompleted();
     displayTodos();
 });
-
-
 
 newDescriptionInput.addEventListener('keyup', ( event )=>{
     if(event.keyCode !== 13) return;
