@@ -4,6 +4,7 @@ import { renderTodos } from './use-cases/render-todos.js';
 
 
 const ElementIDs= {
+    ClearCompleted:'.clear-completed',
     TodoList: '.todo-list',
     NewTodoInput: '#new-todo-input',
 }
