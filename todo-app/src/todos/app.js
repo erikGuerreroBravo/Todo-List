@@ -38,6 +38,9 @@ const filtersUL = document.querySelectorAll(ElementIDs.TodoFilters);
 
 filtersUL.forEach( element => {
     element.addEventListener('click', ( event )=>{
+      //elimanos la palabra selected de todos los filtros
+      filtersUL.forEach( el => el.classList.remove('selected'));
+      
         event.target.classList.add('selected');
         console.log(event.target.text);
     });
