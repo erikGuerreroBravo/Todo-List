@@ -1,9 +1,9 @@
 import { Todo } from "../models/todo.model";
 
-const Filters ={
+export const Filters ={
     All: 'all',
-    Completed: 'completed',
-    Pending: 'pending'
+    Completed: 'Completed',
+    Pending: 'Pending'
 }
 
 const state ={
@@ -51,7 +51,7 @@ const loadStorage = ( ) =>{
 const savestorageToLocalStorage = () =>{
     
     localStorage.setItem('state', JSON.stringify( state ) );
-    console.log(localStorage.getItem('state') );  
+    //console.log(localStorage.getItem('state') );  
 };
 /**
  * 
@@ -98,18 +98,21 @@ const getCurrentFilter = () =>{
  * 
  * @param {String} filter el filtro que se va a aplicar, puede ser: all, completed, pending 
  */
-const getTodos = (filter = Filters.All) =>{
-    switch(filter){
+const getTodos = ( filter = Filters.All ) => {
+    
+    switch( filter ) {
         case Filters.All:
             return [...state.todos];
+        
         case Filters.Completed:
-            return state.todos.filter(todo => todo.done );
-        case Filters.Pending:
-            return state.todos.filter(todo => !todo.done);
-        default:
-            throw new Error(`Option ${ filter } is not valid`);
-    }
+            return state.todos.filter( todo => todo.done );
 
+        case Filters.Pending:
+            return state.todos.filter( todo => !todo.done );
+
+        default:
+            throw new Error(`Option ${ filter } is not valid.`);
+    }
 }
 
 

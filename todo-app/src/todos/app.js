@@ -1,7 +1,7 @@
 import  html from './app.html?raw';
 import todoStore from '../store/todo.store.js';
 import { renderTodos } from './use-cases/render-todos.js';
-
+import { Filters } from '../store/todo.store.js';
 
 const ElementIDs= {
     ClearCompleted:'.clear-completed',
@@ -17,6 +17,7 @@ export const App =( elementId ) => {
 
 const displayTodos = ()=>{
     const todos = todoStore.getTodos( todoStore.getCurrentFilter());
+    console.log({todos});
     renderTodos(ElementIDs.TodoList, todos);
 }
 
@@ -37,12 +38,26 @@ const filtersUL = document.querySelectorAll(ElementIDs.TodoFilters);
 
 
 filtersUL.forEach( element => {
-    element.addEventListener('click', ( event )=>{
+
+    element.addEventListener('click', ( element )=>{
       //elimanos la palabra selected de todos los filtros
       filtersUL.forEach( el => el.classList.remove('selected'));
-      
-        event.target.classList.add('selected');
-        console.log(event.target.text);
+      element.target.classList.add('selected');
+        switch( element.target.text ){
+            case 'Todos':
+                todoStore.setFilter(Filters.All);
+                break;
+            case 'Pendientes':
+                todoStore.setFilter(Filters.Pending);
+                
+                break;
+            case 'Completados':
+                todoStore.setFilter(Filters.Completed);
+                
+                break;
+        }
+        displayTodos();
+       
     });
 
 });
